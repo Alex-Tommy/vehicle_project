@@ -1,2 +1,2 @@
 # vehicle_project
-Vehicle Project
+Progetto che crea mappe 2D di densità che rappresenta la predisposizione dei veicoli in una determinata immagine 
