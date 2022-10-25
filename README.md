@@ -5,6 +5,6 @@ Progetto che crea mappe 2D di densità che rappresenta la predisposizione dei ve
 - ALLENAMENTO
 - RISULTATI
 
-1. YOLOv3
+## 1. YOLOv3
 
 
