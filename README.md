@@ -7,4 +7,10 @@ Progetto che crea mappe 2D di densità che rappresenta la predisposizione dei ve
 
 ## 1. YOLOv3
 
+## 2. VEDAI DATASET
+
+## 3. ALLENAMENTO
+
+## 4. RISULTATI
+
 
