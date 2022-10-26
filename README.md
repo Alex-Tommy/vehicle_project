@@ -14,8 +14,8 @@ Per maggiori informazioni sul dataset usato e sulle sue caratteristiche visualiz
 
 ---
 ### 3. ALLENAMENTO
-
 Allenamento svolto sulla piattaforma Google Colab
+
 ---
 ### 4. RISULTATI
 
