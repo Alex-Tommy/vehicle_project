@@ -5,18 +5,18 @@ Progetto che crea mappe 2D di densità che rappresentano la predisposizione dei 
 - ALLENAMENTO
 - RISULTATI
 ---
-##  YOLOv5m
+###  YOLOv5m
 Per maggiori informazioni sul modello usato visualizzare questo [link](https://github.com/ultralytics/yolov5)
 
 ---
-##  UAVDT Dataset 
+###  UAVDT Dataset 
 Per maggiori informazioni sul dataset usato e sulle sue caratteristiche visualizzare questo [link](https://sites.google.com/view/grli-uavdt/%E9%A6%96%E9%A1%B5)
 
 ---
-##  ALLENAMENTO
+###  ALLENAMENTO
 Allenamento svolto sulla piattaforma Google Colab
 
 ---
-##  RISULTATI
+###  RISULTATI
 
 
