@@ -14,7 +14,7 @@ Per maggiori informazioni sul dataset usato e sulle sue caratteristiche visualiz
 
 ---
 ###  ALLENAMENTO
-Allenamento svolto sulla piattaforma Google Colab
+Allenamento svolto sulla piattaforma Google Colab seguendo il notebook `training.ipynb`
 
 ---
 ###  RISULTATI
