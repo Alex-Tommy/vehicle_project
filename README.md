@@ -18,7 +18,7 @@ Per maggiori informazioni sul dataset usato aprire questo [link](https://sites.g
 
 Nella cartella `scripts` sono presenti i file che ho utilizzato per formattare il dataset nel formato YOLO:
 * `organise_image_folders.py` copia le immagini in un unica cartella
-* `organise_txt_labels.py` formatta le annotazioni nel formato YOLO `class-object  x-center  y-center  width  height` compresi in [0,1]
+* `organise_txt_labels.py` formatta le annotazioni nel formato YOLO `class  x-center  y-center  width  height` compresi in [0,1]
 * `split_train_val.py` crea un training set e un validation set
 
 ---
