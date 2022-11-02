@@ -23,7 +23,10 @@ Nella cartella `scripts` sono presenti i file che ho utilizzato per formattare i
 
 ---
 ###  ALLENAMENTO
-Allenamento svolto sulla piattaforma Google Colab seguendo il notebook `training.ipynb`
+Allenamento svolto su un calcolatore con:
+* Processore AMD Ryzen 5 2600 Six-Core 3,4 GHz
+* GPU : NVIDIA Geoforce 1070
+* RAM : 8 Gb
 
 ---
 ###  RISULTATI
