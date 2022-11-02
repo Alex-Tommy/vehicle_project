@@ -15,7 +15,8 @@ Il dataset è composto da circa 40000 immagini che hanno le seguenti caratterist
 ![](https://github.com/Alex-Tommy/vehicle_project/blob/main/repo-images/dataset-composition.png)
 
 Per maggiori informazioni sul dataset usato aprire questo [link](https://sites.google.com/view/grli-uavdt/%E9%A6%96%E9%A1%B5)
-Nella cartella `scripts` sono presenti i file che ho utilizzato per formattare il dataset nel formato YOLO
+
+Nella cartella `scripts` sono presenti i file che ho utilizzato per formattare il dataset nel formato YOLO:
 * ``
 * ``
 * ``
