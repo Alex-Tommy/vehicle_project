@@ -1,10 +1,10 @@
 import os
 
 
-old_dir = '../../UAV-benchmark-MOTD_v1.0/GT'
-output_dir = '../../dataset/labels/all'
+old_dir = '../UAV-benchmark-MOTD_v1.0/GT'
+output_dir = '../dataset/labels/all'
 if not os.path.exists(output_dir):
-    os.makedirs(output_dir)
+    os.makedirs(output_dir,mode=0o777)
 IMG_W = 1024
 IMG_H = 540
 
