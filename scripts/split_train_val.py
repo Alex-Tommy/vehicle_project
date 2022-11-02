@@ -3,23 +3,23 @@ import random
 import shutil
 
 
-images_dir = '../../dataset/images/all'
-labels_dir = '../../dataset/labels/all'
+images_dir = '../dataset/images/all'
+labels_dir = '../dataset/labels/all'
 
-tra_img_dir = '../../dataset/images/train'
-val_img_dir = '../../dataset/images/val'
+tra_img_dir = '../dataset/images/train'
+val_img_dir = '../dataset/images/val'
 
-tra_labels_dir = '../../dataset/labels/train'
-val_labels_dir = '../../dataset/labels/val'
+tra_labels_dir = '../dataset/labels/train'
+val_labels_dir = '../dataset/labels/val'
 
 if not os.path.exists(tra_img_dir):
-    os.makedirs(tra_img_dir)
+    os.makedirs(tra_img_dir,mode=0o777)
 if not os.path.exists(val_img_dir):
-    os.makedirs(val_img_dir)
+    os.makedirs(val_img_dir,mode=0o777)
 if not os.path.exists(tra_labels_dir):
-    os.makedirs(tra_labels_dir)
+    os.makedirs(tra_labels_dir,mode=0o777)
 if not os.path.exists(val_labels_dir):
-    os.makedirs(val_labels_dir)
+    os.makedirs(val_labels_dir,mode=0o777)
 
 
 labels_filename = os.listdir(labels_dir)    # ['M1306_000215.txt', 'M0501_000291.txt', ......]
