@@ -2,10 +2,10 @@ import os
 import shutil
 
 
-old_dir = '../../UAV-benchmark-M'
-output_dir = '../../dataset/images/all'
+old_dir = '../UAV-benchmark-M'
+output_dir = '../dataset/images/all'
 if not os.path.exists(output_dir):
-    os.makedirs(output_dir)
+    os.makedirs(output_dir,mode=0o777)
 
 
 folder_names = os.listdir(old_dir)
