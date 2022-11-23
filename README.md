@@ -23,7 +23,18 @@ Nella cartella `scripts` sono presenti i file che ho utilizzato per formattare i
 
 Di tutte le immagini del dataset ho estratto manualmente quelle che hanno una vista bird-view o comunque un vista dall'alto,
 le categorie di immaginmi scelte sono:
-
+* M0203
+* M0210
+* M0603
+* M0701
+* M0702
+* M0703
+* M0801
+* M0901
+* M1008
+* M1009
+* M1102
+* M1201
 
 ---
 ###  ALLENAMENTO
