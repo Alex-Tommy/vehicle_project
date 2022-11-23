@@ -50,3 +50,14 @@ Allenamento svolto su un calcolatore con:
 ---
 ###  RISULTATI
 
+La pipeline che descrive i passaggi dell' algoritmo è:
+
+
+<table cellspacing="2" cellpadding="2" width="1000" border="0">
+<tbody>
+<tr>
+<td valign="top" width="500"><img src="repo-images/9.jpeg"></td>
+<td valign="top" width="500"><img src="repo-images/densitymap.jpg"></td>
+</tr>
+</tbody>
+</table>
