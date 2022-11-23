@@ -59,11 +59,12 @@ La pipeline che descrive i passaggi dell' algoritmo è:
 Ecco alcuni esempi:
 
 
-<table cellspacing="2" cellpadding="2" width="1000" border="0">
+<table cellspacing="3" cellpadding="3" width="900" border="0">
 <tbody>
 <tr>
-<td valign="top" width="500"><img src="repo-images/9.jpeg"></td>
-<td valign="top" width="500"><img src="repo-images/densitymap.jpg"></td>
+<td valign="top" width=300"><img src="repo-images/5.jpg"></td>
+<td valign="top" width="300"><img src="repo-images/5-detected.jpg"></td>
+<td valign="top" width="300"><img src="repo-images/5-densitymap.jpg"></td>
 </tr>
 </tbody>
 </table>
