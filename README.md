@@ -45,5 +45,7 @@ Allenamento svolto su un calcolatore con:
 * GPU : NVIDIA Geoforce 1070
 * RAM : 8 Gb
 
+![](https://github.com/Alex-Tommy/vehicle_project/blob/main/repo-images/result1.png)
+![](https://github.com/Alex-Tommy/vehicle_project/blob/main/repo-images/result2.png)
 ---
 ###  RISULTATI
