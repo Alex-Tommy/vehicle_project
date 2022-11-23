@@ -22,7 +22,7 @@ Nella cartella `scripts` sono presenti i file che ho utilizzato per formattare i
 * `split_train_val.py` crea un training set e un validation set
 
 Di tutte le immagini del dataset ho estratto manualmente quelle che hanno una vista bird-view o comunque un vista dall'alto,
-le categorie di immaginmi scelte sono:
+le categorie di immagini scelte sono:
 * M0203
 * M0210
 * M0603
