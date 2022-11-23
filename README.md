@@ -52,6 +52,10 @@ Allenamento svolto su un calcolatore con:
 
 La pipeline che descrive i passaggi dell' algoritmo è:
 
+![](repo-images/schema.png)
+
+Ecco alcuni esempi:
+
 
 <table cellspacing="2" cellpadding="2" width="1000" border="0">
 <tbody>
