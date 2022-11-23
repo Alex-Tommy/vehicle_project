@@ -20,9 +20,10 @@ Nella cartella `scripts` sono presenti i file che ho utilizzato per formattare i
 * `organise_image_folders.py` copia le immagini in un unica cartella
 * `organise_txt_labels.py` formatta le annotazioni nel formato YOLO `class  x-center  y-center  width  height` compresi in [0,1]
 * `split_train_val.py` crea un training set e un validation set
+
 Di tutte le immagini del dataset ho estratto manualmente quelle che hanno una vista bird-view o comunque un vista dall'alto,
 le categorie di immaginmi scelte sono:
--
+
 
 ---
 ###  ALLENAMENTO
