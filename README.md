@@ -56,6 +56,10 @@ La pipeline che descrive i passaggi dell' algoritmo è:
 
 ![](repo-images/schema.png)
 
+Sono presenti due file main:
+* `main_opencv.py` : va eseguito se non si ha una gpu
+* `main_pytorch.py` : sfrutta la potenza della propria gpu tramite CUDA e Pytorch, inoltre va clonata la repository ufficiale di [yolov5](https://github.com/ultralytics/yolov5)
+
 Ecco alcuni esempi:
 
 
