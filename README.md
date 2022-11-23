@@ -45,6 +45,8 @@ Allenamento svolto su un calcolatore con:
 * GPU : NVIDIA Geoforce 1070
 * RAM : 8 Gb
 
+Allenamento svolto in 300 epoche i cui iperparametri sono consultabili nel file `hyp.yaml`
+
 ![](repo-images/results.png)
 
 ---
