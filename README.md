@@ -36,7 +36,7 @@ le categorie di immagini scelte sono:
 * M1102
 * M1201
 
-Per un totale di 10291 immagini di test e 1.544 di test.
+Per un totale di 10291 immagini di train e 1.544 di test.
 
 ---
 ###  ALLENAMENTO
