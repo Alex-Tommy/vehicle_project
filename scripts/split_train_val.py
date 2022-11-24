@@ -22,17 +22,16 @@ if not os.path.exists(val_labels_dir):
     os.makedirs(val_labels_dir,mode=0o777)
 
 
-labels_filename = os.listdir(labels_dir)    # ['M1306_000215.txt', 'M0501_000291.txt', ......]
-random.shuffle(labels_filename)    # shuffle the dataset
+labels_filename = os.listdir(labels_dir)    
+random.shuffle(labels_filename)   
 
 tra_filename = labels_filename[:35000]
 val_filename = labels_filename[35000:]
 print('number of training images is: ', len(tra_filename))
 print('number of validation images is: ', len(val_filename))
 
-# training dataset
-for tra_file in tra_filename:    # 'M1306_000215.txt'
-    prefix = tra_file[:12]    # 'M1306_000215'
+for tra_file in tra_filename:    
+    prefix = tra_file[:12]   
     old_tra_img = images_dir + '/' + prefix + '.jpg'
     new_tra_img = tra_img_dir + '/' + prefix + '.jpg'
     shutil.copyfile(old_tra_img, new_tra_img)
