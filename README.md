@@ -70,5 +70,10 @@ Ecco alcuni esempi:
 <td valign="top" width="300"><img src="repo-images/5-detected.jpg"></td>
 <td valign="top" width="300"><img src="repo-images/5-densitymap.jpg"></td>
 </tr>
+<tr>
+<td valign="top" width=300"><img src="repo-images/9.jpg"></td>
+<td valign="top" width="300"><img src="repo-images/9-detected.jpg"></td>
+<td valign="top" width="300"><img src="repo-images/9-densitymap.jpg"></td>
+</tr>
 </tbody>
 </table>
