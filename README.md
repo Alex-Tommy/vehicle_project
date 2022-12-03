@@ -1,4 +1,4 @@
-# Vehicle Density Map for Traffic Managment
+# Vehicle Heat Map for Traffic Managment
 Progetto che crea mappe 2D di densità che rappresentano la predisposizione dei veicoli in una determinata immagine.
 - SISTEMA DI OBJECT DETECTION : YOLOv5m
 - DATASET : UAVDT Dataset
