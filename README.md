@@ -5,7 +5,7 @@ Progetto che crea mappe 2D di densità che rappresentano la predisposizione dei 
 - ALLENAMENTO
 - RISULTATI
 ---
-###  YOLOv5m
+###  YOLOv5
 Per maggiori informazioni sul modello usato visualizzare questo [link](https://github.com/ultralytics/yolov5)
 
 ---
