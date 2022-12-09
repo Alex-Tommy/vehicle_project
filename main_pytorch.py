@@ -175,7 +175,7 @@ def image(path):
 
 ####### MAIN ########
 # yolov5-master è la directory clonata di yolov5 --> https://github.com/ultralytics/yolov5
-model = torch.hub.load("../yolov5-master", 'custom', path='300.pt', source='local') 
+model = torch.hub.load("../yolov5-master", 'custom', path='300_.pt', source='local') 
 
 csv_data = [["Interval","N-vehicles"]]
 
