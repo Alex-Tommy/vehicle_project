@@ -49,6 +49,8 @@ Allenamento svolto in 300 epoche i cui iperparametri sono consultabili nel file 
 
 ![](repo-images/results.png)
 
+Pesi della rete : ![link](https://drive.google.com/drive/folders/1czNtqmjGhjBMNM5TlIZ8aVmKh6rTBjLf?usp=sharing)
+
 ---
 ###  RISULTATI
 
@@ -58,7 +60,7 @@ La pipeline che descrive i passaggi dell' algoritmo è:
 
 Sono presenti due file main:
 * `main_opencv.py` : va eseguito se non si ha una gpu
-* `main_pytorch.py` : sfrutta la potenza della propria gpu tramite CUDA e Pytorch, inoltre va clonata la repository ufficiale di [yolov5](https://github.com/ultralytics/yolov5)
+* `main_pytorch.py` : sfrutta la potenza della propria gpu tramite CUDA e PyTorch, inoltre va clonata la repository ufficiale di [yolov5](https://github.com/ultralytics/yolov5)
 
 La rete neurale riesce a riconoscere la maggior parte dei veicoli in un immagine, fa fatica sopratutto in casi di scarsa illuminazione, ad altezze elevate e quando i veicoli sono molto vicini tra loro, ecco alcuni esempi:
 
