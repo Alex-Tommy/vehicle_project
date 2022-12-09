@@ -3,14 +3,12 @@ import matplotlib.pyplot as plt
 import numpy as np
 import cv2
 from scipy import stats
-import seaborn as sns
 import os
 import csv
 
-def define_Region_of_Interest(image):
+def define_Region_of_Interest(image):                   
     mask = np.zeros(image.shape[:2], np.uint8)
     mask = cv2.bitwise_not(mask)
-    cv2.rectangle(mask, (1000,0), (image.shape[1],400), 0, -1)
     return cv2.bitwise_and(image, image, mask=mask)
 
 def DensityMap(x_array, y_array,count,mode):
