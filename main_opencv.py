@@ -21,8 +21,9 @@ YELLOW = (0,255,255)
 
 csv_data = [["Interval","N_Vehicles"]]
 
-def define_Region_of_Interest(image):
-    # Elimina le zone non di interesse dall' immagine
+def define_Region_of_Interest(image):          # Elimina le zone non di interesse dall' immagine
+    mask = np.zeros(image.shape[:2], np.uint8)
+    mask = cv2.bitwise_not(mask)
     return image
 
 def draw_label(im, label, x, y):
@@ -30,16 +31,6 @@ def draw_label(im, label, x, y):
     dim, baseline = text_size[0], text_size[1]
     cv2.rectangle(im, (x,y), (x + dim[0], y + dim[1] + baseline), (0,0,0), cv2.FILLED);
     cv2.putText(im, label, (x, y + dim[1]), FONT_FACE, FONT_SCALE, YELLOW, THICKNESS, cv2.LINE_AA)
-
-def draw_points(x_array, y_array, x_axis, y_axis):
-    xmin = x_array.min() - 50
-    xmax = x_array.max() + 50
-    ymin = y_array.min() - 50
-    ymax = y_array.max() + 50
-
-    plt.scatter(x_array, y_array)
-    plt.axis([xmin,xmax,ymin,ymax])
-    plt.show()
 
 def TwoD_Density_Plot(x_array, y_array,count,mode):
     xmin = x_array.min() - 50
@@ -166,7 +157,7 @@ def video(path):
             break
         framecount += 1
 
-        if framecount == (framerate * 10) :
+        if framecount == (framerate * 10) :  # intervallo di tempo tra un frame e un altro
             print("WAITING !")
 
             framecount = 0
@@ -257,8 +248,8 @@ mode = input("Video(v) or Image(i) ? ")
 
 try:
     if mode == "V" or mode == "v":
-        video("./test_video/2.mp4") 
+        video("./test/...")            #inserire il percorso al video
     elif mode == "I" or mode == "i":
-        image("./test_images/14.jpg")
+        image("./test/...")            #inserire il percorso all'immagine
 except FileNotFoundError:
     print("File non trovato")
