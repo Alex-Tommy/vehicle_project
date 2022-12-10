@@ -239,14 +239,14 @@ csv_data = [["Interval","N_Vehicles"]]
 with open("custom.names", 'rt') as f:
     classes = f.read().rstrip('\n').split('\n')
 
-net = cv2.dnn.readNet("80.onnx")
+net = cv2.dnn.readNet("weights.onnx")
 
 mode = input("\nVideo(v) or Image(i) ? ")
 
 try:
     if mode == "v":
-        video("./test_video/4.mp4") 
+        video("./test/...")     # Percorso del video
     elif mode == "i":
-        image("./test_images/14.jpg")
+        image("./test/...")     # Percorso dell'immagine
 except FileNotFoundError:
     print("File non trovato")
