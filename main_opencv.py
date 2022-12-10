@@ -16,7 +16,7 @@ FONT_SCALE = 0.7
 THICKNESS = 1
 
 BLACK  = (0,0,0)
-BLUE   = (255,178,50)
+BLUE   = (255,0,0)
 YELLOW = (0,255,255)
 
 csv_data = [["Interval","N_Vehicles"]]
