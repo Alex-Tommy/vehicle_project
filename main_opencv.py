@@ -21,8 +21,7 @@ YELLOW = (0,255,255)
 
 csv_data = [["Interval","N_Vehicles"]]
 
-def define_Region_of_Interest(image):
-    # Elimina le zone non di interesse dall' immagine
+def define_Region_of_Interest(image):               # Elimina le zone non di interesse dall' immagine
     mask = np.zeros(image.shape[:2], np.uint8)
     mask = cv2.bitwise_not(mask)
     return image
@@ -32,16 +31,6 @@ def draw_label(im, label, x, y):
     dim, baseline = text_size[0], text_size[1]
     cv2.rectangle(im, (x,y), (x + dim[0], y + dim[1] + baseline), (0,0,0), cv2.FILLED);
     cv2.putText(im, label, (x, y + dim[1]), FONT_FACE, FONT_SCALE, YELLOW, THICKNESS, cv2.LINE_AA)
-
-def draw_points(x_array, y_array, x_axis, y_axis):
-    xmin = x_array.min() - 50
-    xmax = x_array.max() + 50
-    ymin = y_array.min() - 50
-    ymax = y_array.max() + 50
-
-    plt.scatter(x_array, y_array)
-    plt.axis([xmin,xmax,ymin,ymax])
-    plt.show()
 
 def DensityMap(x_array,y_array,count):
     xmin = x_array.min() - 50
@@ -66,7 +55,7 @@ def DensityMap(x_array,y_array,count):
         fig.savefig(f"./results/image/densitymap.jpg")
     plt.close(fig)
 
-def pre_process(input_image, net):
+def pre_process(input_image, net):      # Imposta l'input
 
     blob = cv2.dnn.blobFromImage(input_image, 1 / 255, (INPUT_WIDTH, INPUT_HEIGHT), [0, 0, 0], 1, crop=False)
 
@@ -75,7 +64,7 @@ def pre_process(input_image, net):
     outputs = net.forward(net.getUnconnectedOutLayersNames())
     return outputs
 
-def post_process(img,detections):
+def post_process(img,detections):      # Elaborazione risultati
 
     class_ids = []
     confidences = []
