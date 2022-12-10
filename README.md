@@ -64,11 +64,6 @@ La rete neurale riesce a riconoscere la maggior parte dei veicoli in un immagine
 <table cellspacing="3" cellpadding="3" width="900" border="0">
 <tbody>
 <tr>
-<td valign="center" width=300"><img src="repo-images/5.jpg"></td>
-<td valign="center" width="300"><img src="repo-images/5-detected.jpg"></td>
-<td valign="center" width="300"><img src="repo-images/5-densitymap.jpg"></td>
-</tr>
-<tr>
 <td valign="center" width=300"><img src="repo-images/9.jpg"></td>
 <td valign="center" width="300"><img src="repo-images/9-detected.jpg"></td>
 <td valign="center" width="300"><img src="repo-images/9-densitymap.jpg"></td>
