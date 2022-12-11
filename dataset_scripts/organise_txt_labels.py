@@ -24,7 +24,7 @@ for each_txt in video_label_txts:
                 img_num = line_ls[0]    
                 img_six_num = (6-len(img_num))*'0' + str(img_num)    # '001089'
 
-                # trasforma [x1, y1, w, h] to [xc, yc, w, h]
+                # trasforma [x1, y1, w, h] in [xc, yc, w, h]
                 org_xc = int(line_ls[2]) + int(line_ls[4])/2
                 org_yc = int(line_ls[3]) + int(line_ls[5])/2
                 org_w = int(line_ls[4])
@@ -45,13 +45,13 @@ for each_txt in video_label_txts:
                 if h>1:
                     print('oh no!!! h ', h)
 
-                # remimuove le label sbagliate (alcune erano molto grandi)  
+                # rimuove le label sbagliate (alcune erano molto grandi)  
                 wrong_label = False
                 if org_w > (IMG_W / 6):
                     if org_h > (IMG_H / 6):
                         wrong_label = True
 
-                # riscrive le bouding boxes in un nuovo file di testo (una immagine corresponde a un  di testo)
+                # riscrive le bounding boxes in un nuovo file di testo (una immagine corrisponde a un file di testo)
                 if not wrong_label:
                     new_txt_path = output_dir + '/' + video_name + '_' + img_six_num + '.txt'
                     with open(new_txt_path, 'a') as wr:
