@@ -1,0 +1,4 @@
+Eseguire in ordine:
+- organise_image_folders
+- organise_txt_labels
+- split_train_val
