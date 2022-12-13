@@ -48,7 +48,7 @@ def DensityMap(x_array,y_array,count):
     ax.plot(x_array, y_array, 'k.', markersize=3)
     ax.set_xlim([xmin, xmax])
     ax.set_ylim([ymin, ymax])
-    plt.pcolormesh(X, Y, Z.reshape(X.shape), shading='auto' , cmap='jet')
+    plt.pcolormesh(X, Y, Z.reshape(X.shape), shading='auto' ) #, cmap='jet')
     if mode == "v":
         fig.savefig(f"./results/video/densityMaps/densitymap_{count}.jpg")
     else :
