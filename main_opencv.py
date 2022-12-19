@@ -17,21 +17,21 @@ THICKNESS = 1
 
 BLACK  = (0,0,0)
 BLUE   = (255,0,0)
-YELLOW = (0,255,255)
 
-csv_data = [["Interval","N_Vehicles"]]
-
-def define_Region_of_Interest(image):               # Elimina le zone non di interesse dall' immagine
+# Elimina le zone non di interesse dall' immagine applicando una maschera
+def define_Region_of_Interest(image):              
     mask = np.zeros(image.shape[:2], np.uint8)
     mask = cv2.bitwise_not(mask)
     return image
 
+# Disegna i risultati di ogni oggetto riconosciuto 
 def draw_label(im, label, x, y):
     text_size = cv2.getTextSize(label, FONT_FACE, FONT_SCALE, THICKNESS)
     dim, baseline = text_size[0], text_size[1]
     cv2.rectangle(im, (x,y), (x + dim[0], y + dim[1] + baseline), (0,0,0), cv2.FILLED);
-    cv2.putText(im, label, (x, y + dim[1]), FONT_FACE, FONT_SCALE, YELLOW, THICKNESS, cv2.LINE_AA)
+    cv2.putText(im, label, (x, y + dim[1]), FONT_FACE, FONT_SCALE, (0,255,255), THICKNESS, cv2.LINE_AA)
 
+# Tramite una lista di coordinate viene creata una mappa di densità
 def DensityMap(x_array,y_array,count):
     xmin = x_array.min() - 50
     xmax = x_array.max() + 50
@@ -41,6 +41,7 @@ def DensityMap(x_array,y_array,count):
     X, Y = np.mgrid[xmin:xmax:400j, ymin:ymax:400j]
     positions = np.vstack([X.ravel(), Y.ravel()])
     values = np.vstack([x_array, y_array])
+    # Applicazione di kernel Gaussiani per la stima di densità
     kernel = stats.gaussian_kde(values)
     Z = np.reshape(kernel(positions).T, X.shape)
     fig, ax = plt.subplots()
@@ -54,19 +55,19 @@ def DensityMap(x_array,y_array,count):
     else :
         fig.savefig(f"./results/image/densitymap.jpg")
     plt.close(fig)
-
-def pre_process(input_image, net):      # Imposta l'input
-
+    
+# Pre-processamento dei risultati
+def pre_process(input_image, net): 
+    # Crea e imposta l'input della rete
     blob = cv2.dnn.blobFromImage(input_image, 1 / 255, (INPUT_WIDTH, INPUT_HEIGHT), [0, 0, 0], 1, crop=False)
-
     net.setInput(blob)
-
+    # Risultati della rete
     outputs = net.forward(net.getUnconnectedOutLayersNames())
     return outputs
 
-def post_process(img,detections):      # Elaborazione risultati
-
-    class_ids = []
+# Elaborazione risultati
+def post_process(img,detections):
+    
     confidences = []
     boxes = []
     
@@ -75,14 +76,13 @@ def post_process(img,detections):      # Elaborazione risultati
     x_factor = image_width / INPUT_WIDTH
     y_factor = image_height / INPUT_HEIGHT
     for r in range(rows):
+        # Risultati di un oggetto
         row = detections[0][0][r]
         confidence = row[4]
         if confidence >= CONFIDENCE_THRESHOLD:
-            classes_scores = row[5:]
-            class_id = np.argmax(classes_scores)
-            if (classes_scores[class_id] > SCORE_THRESHOLD):
+            classes_scores = row[5]
+            if (classes_scores > SCORE_THRESHOLD):
                 confidences.append(confidence)
-                class_ids.append(class_id)
                 cx, cy, w, h = int(row[0]), int(row[1]), int(row[2]), int(row[3])
                 width = int(row[2] * x_factor)
                 height = int(row[3] * y_factor)
@@ -91,17 +91,19 @@ def post_process(img,detections):      # Elaborazione risultati
                 box = np.array([x, y, width, height])
                 boxes.append(box)
     
-    return  class_ids,confidences,boxes
+    return  confidences,boxes
 
+# Funzione che ottenuta un'immagine costriusce la mappa di densità tramite le funzioni viste
 def detect(img,masked,count):
     image_height, image_width = img.shape[:2]
     detections = pre_process(masked, net)
-    class_ids, confidences, boxes = post_process(img,detections)
+    confidences, boxes = post_process(img,detections)
     center_points = []
     #Non-maximum-suppression
     indices = cv2.dnn.NMSBoxes(boxes, confidences, CONFIDENCE_THRESHOLD, NMS_THRESHOLD)
     print(f"Numero di veicoli individuati : {len(indices)}")
     print()
+    # Vengono estratte le coordinate delle bbox e disegnate
     for i in indices.flatten():
         (x, y) = (boxes[i][0], boxes[i][1])
         center_points.append((x,abs(y-image_height)))
@@ -109,13 +111,14 @@ def detect(img,masked,count):
         cv2.rectangle(img, (x, y), (x + w, y + h), BLUE, 2)
         label = "{}:{:.2f}".format(classes[class_ids[i]], confidences[i])
     csv_data.append([count-1,len(center_points)])
+    # Creazione di due array contenenti rispettivamente le coordinate x e y separate 
     xs = np.array([xi for xi, yi in center_points])
     ys = np.array([yi for xi, yi in center_points])
     if len(xs) > 2:
         DensityMap(xs,ys,count)
 
     
-
+# Ramo per elaborare video
 def video(path):
 
     #######################################################
@@ -205,6 +208,7 @@ def video(path):
     cv2.namedWindow('window')
     cv2.destroyAllWindows()
 
+# Ramo per elaborare immagini
 def image(path):
 
     #######################################################
@@ -234,13 +238,18 @@ def image(path):
 
 ####### MAIN ########
 
+# File csv che raccoglie i dati dalle immagini elaborate:
+# usato solo nella computazione di un video
 csv_data = [["Interval","N_Vehicles"]]
 
+# Apro il file contenente i nomi delle classi, nel mio caso vi è solo un nome
 with open("custom.names", 'rt') as f:
     classes = f.read().rstrip('\n').split('\n')
 
-net = cv2.dnn.readNet("weights.onnx")
+# Carico il modello della rete
+net = cv2.dnn.readNetFromONNX("weights.onnx")
 
+# Si sceglie la modalità di esecuzione dello script
 mode = input("\nVideo(v) or Image(i) ? ")
 
 try:
