@@ -49,7 +49,7 @@ Allenamento svolto in 300 epoche i cui iperparametri sono consultabili nel file 
 
 ![](repo-images/results.png)
 
-Pesi della rete : [link](https://drive.google.com/drive/folders/1czNtqmjGhjBMNM5TlIZ8aVmKh6rTBjLf?usp=sharing)
+Modello della rete : [link](https://drive.google.com/drive/folders/1czNtqmjGhjBMNM5TlIZ8aVmKh6rTBjLf?usp=sharing)
 
 ---
 ###  RISULTATI
