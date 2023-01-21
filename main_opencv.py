@@ -181,10 +181,12 @@ def video(path):
     print("\nENDING")
     print("++++++++++++++++++++++++++++++++++++++++++\n")
 
+    # Scrive i risultati sul file csv
     with open("./results/video/data.csv", "w", newline='') as file:
         writer = csv.writer(file)
         writer.writerows(csv_data)
-
+    
+    # Dai dati raccolti viene generato un grafico che descrive il numero di veicoli individuati nel tempo
     with open("./results/video/data.csv", "r") as file:
         x = np.array([])
         y = np.array([])
